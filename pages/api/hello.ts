@@ -33,6 +33,6 @@ export default async function terms(req: NextApiRequest, res: NextApiResponse) {
             res.status(200).json(error)
         }
     } else {
-    res.status(500)
+        res.status(500)
     }
 }
