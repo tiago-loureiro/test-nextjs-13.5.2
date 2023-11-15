@@ -9,6 +9,12 @@ export default async function stream(req: NextApiRequest, res: NextApiResponse) 
     myStream.write('Hello, world!');
     // Pipe the stream to the response
     res.setHeader('x-vercel-dummy', "x".repeat(headerSize));
+    let iterCount = 100;
+    while (iterCount > 0) {
+        console.log(`Fetches left ${iterCount}`);
+        await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
+        iterCount--;
+    }
     myStream.pipe(res);    
     myStream.end();
 };
