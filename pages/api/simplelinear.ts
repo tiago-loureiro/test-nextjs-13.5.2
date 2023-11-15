@@ -62,7 +62,7 @@ export default async function simplelinear(req: NextApiRequest, res: NextApiResp
         await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
     }
 
-    console.log(`Ended now ${(new Date().getTime()) - start} ms later after fetching ${allStories.length} stories and doing ${fetchCountNr} dummy requests`);
+    console.log(`Ended ${(new Date().getTime()) - start} ms later after fetching ${allStories.length} stories and doing ${fetchCountNr} dummy requests`);
     
     res.setHeader('x-vercel-dummy', "x".repeat(arrSizeNr));
     res.status(200).json({"size": arrSizeNr});
