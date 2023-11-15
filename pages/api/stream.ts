@@ -3,7 +3,7 @@ import { PassThrough } from 'stream';
 
 export default async function stream(req: NextApiRequest, res: NextApiResponse) {
     const sz = req.query.q || '1';
-    const count = Math.max(parseInt(Array.isArray(sz) ? sz[0] : sz), 5000);
+    const count = parseInt(Array.isArray(sz) ? sz[0] : sz);
 
     const myStream = new PassThrough();  
     // Write data to the stream
