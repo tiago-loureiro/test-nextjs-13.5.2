@@ -1,9 +1,10 @@
 // Can be 'nodejs', but Vercel recommends using 'edge'
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 // Prevents this route's response from being cached
 export const dynamic = 'force-dynamic';
  
-export default async function GET() {
+// This method must be named GET
+export async function GET() {
   // This encoder will stream your text
   const encoder = new TextEncoder();
   const customReadable = new ReadableStream({
