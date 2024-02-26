@@ -11,7 +11,7 @@ export async function GET() {
     start(controller) {
       // Start encoding 'Basic Streaming Test',
       // and add the resulting stream to the queue
-      controller.enqueue(encoder.encode('Hi!'));
+      controller.enqueue(encoder.encode('Hi!!!'));
       // Prevent anything else being added to the stream
       controller.close();
     },
