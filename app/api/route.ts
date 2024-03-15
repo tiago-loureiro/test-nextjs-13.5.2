@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic';
  
 // This method must be named GET
 export async function GET() {
-  console.log('This will be logged');
+  console.log('This will be logged again');
   // This encoder will stream your text
   const encoder = new TextEncoder();
   const customReadable = new ReadableStream({
